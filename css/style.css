@@ -1,0 +1,553 @@
+* {
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+:root {
+	--color-gray-light-1:#F5F5F5; /* whitesmoke */
+	--color-gray-dark-1:#DDD;
+	--color-gray-dark-2:#AAA;
+	--color-gray-dark-3:#999;
+	--color-gray-dark-4:#555;
+	--color-gray-dark-5:#333;
+	--color-green-1:#008000; /*green*/
+	--color-green-2:#6B8E23; /*olivedrab*/
+	--color-yellow:#FFD700; /*gold*/
+	--color-red-1:#FF4500; /*orangered*/
+	--color-red-2:#B22222; /*firebrick*/
+}
+
+body {
+	font-weight:300;
+	font-family:"Open Sans", sans-serif;
+	color:#333;
+	font-size:14px;
+}
+
+
+/*---------------------------------------------HEADER CSS----------------------------------------------------*/
+
+.header {
+	max-width:960px;
+	/*you can put a background color here while editing to see the margins then delete it after*/
+	margin-left:auto;
+	margin-right:auto;
+	font-size:16px;
+	display:flex; /*separates the logo, name, and nav bar into three different sections (side-by-side)*/
+	justify-content:space-between; /*puts space in between the divided header parts*/
+	align-items:stretch;
+}
+
+.header-logo{
+	width:60px; /*the size of the logo*/
+	margin:5px 0;
+}
+
+.org-name{
+	align-self:center; /*moves the org name to the center of the y-axis*/
+	margin-right:auto; /*pushes the org name to the left */
+	margin-left:10px; /*puts margin space on the left side */
+	font-size:24px;
+	font-weight:400;
+	color:green;
+}
+
+.nav{ /*in the index, the navbar is under 'nav' so we have to target nav in order for the navbar items to stretch to the size of this container*/
+	display:flex; /*turns this container into a flex box*/
+	align-items:stretch; /*makes the items contained in nav, stretch*/
+}
+
+.navbar{
+	display:flex; /*separates each navbar item into their own containers, making them sit side-by-side*/
+}
+
+.navbar-item{
+	list-style:none; /*to make the navbar bullets disappear*/
+	display:flex; /*separates the containers of the item icon and item name*/
+	flex-direction:column; /*places the icon icon on top and the icon name at the bottom*/
+	padding:0 20px; /*left:top and bottom, right:right and left*/
+	cursor:pointer; /*when the mouse hover over the item, the cursor changes into a hand pointer*/
+}
+
+.navbar-item img{
+	wight:20px;
+	height:20px;
+	margin-top:14px;
+	filter:opacity(.5); /*to make the logo grey*/
+
+}
+
+.navbar-item span{ /*this is stated in the index html referring to the navbar item name under the icon*/
+	text-transform:lowercase;
+	font-weight:500;
+	color:#AAA;
+}
+
+.navbar-item:hover, .navbar-item.activepage{ /*this means two classes are in the same element*/ 
+	background:gold;
+}
+
+/*---------------------------------------RECIPES LABEL-----------------------------------------------*/
+
+.category{
+	background-color:#6B8E23;
+	display:flex;
+	align-items:center;
+	padding:30px 0px;
+}
+
+.category-title{
+	color:white;
+	font-size: 25px;
+	letter-spacing:3px;
+	font-weight:bold;
+	margin-left:240px;
+}
+
+.category-dish{
+	display:flex;
+	margin-left:570px;
+}
+
+.chevron{
+	filter:invert(1); /*inverts the image color (black to white)*/
+}
+
+.category-dish-name{
+	color:white;
+	font-size:18px;
+	letter-spacing:2px;
+}
+
+
+/*---------------------------------------MAIN CONTENT-----------------------------------------------*/
+
+main{
+	max-width:960px;
+	/*you can put a background color here while editing to see the margins then delete it after*/
+	margin-left:auto; 
+	margin-right:auto;
+	font-size:14px;
+}
+
+/*--------------------------------------------PASTA-----------------------------------------------------*/
+
+.pasta{
+	display:flex;
+	background-color:#F5F5F5;
+}
+
+.pasta-details{
+	display:flex;
+	flex-direction:column;
+	margin: 20px 20px;
+}
+
+.pasta-name{
+	text-align:center;
+	padding:10px 0px;
+}
+
+.author-details{
+	text-align:center;
+	padding:0px 0px 20px 0px;
+}
+
+.author-pfp{
+	max-width:75px;
+}
+
+.cooking-values{
+	display:flex;
+	margin-bottom:10px;
+}
+
+.cooking-values-measurements{
+	margin-left:10px;
+}
+
+.pasta-img{
+	max-width:680px;
+}
+
+/*---------------------------------------INGREDIENTS & INSTRUCTIONS-----------------------------------------------*/
+
+.ingredients-instructions{
+	display:flex;
+	justify-content:space-between;
+	padding:50px 20px;
+}
+
+.ingredients{
+	width:60%;
+	display:flex;
+	flex-direction:column;
+}
+
+.ingredients-header{
+	padding:0px 0px 10px 0px;
+}
+
+.ingredients li{
+	list-style:none;
+	display:flex;
+	flex-directions:column;
+	padding:0px 0px 5px 0px;;
+}
+
+.instructions{
+	display:flex;
+	flex-direction:column;
+	padding:0px 30px;
+}
+
+.instructions-header{
+	padding:0px 10px 10px 0px;
+}
+
+.instructions li{
+	padding:5px 0px;
+}
+
+/*---------------------------------------RATINGS-----------------------------------------------*/
+
+.ratings{
+	background-color:firebrick;
+	color:#FFF;
+	padding:0 0 0 20px; /*top, right, bottom, left*/
+
+	display:flex; /*separates the location, tag, stars, and rating into three different sections (side-by-side)*/
+	justify-content:space-between; /*puts space in between the divided parts**/
+	align-items:center; /*moves the components to the center of the y-axis*/
+}
+
+.ratings-location{
+	display:inline-flex; /*makes the location icon and name two flexboxes*/
+	align-items:center; /*aligns them to the center*/
+}
+
+.ratings-tags{
+	display:inline-flex;
+	align-items:center;
+}
+
+.ratings-icon{
+	width:18px;
+	height:18px;
+	filter:invert(1); /*inverts the image color (black to white)*/
+}
+
+.ratings ul{
+	display:flex; /*turns the ratings li tags into 3 separate items*/
+}
+
+.ratings li{
+	list-style:none; /*removes the bullet points of the li items*/
+}
+
+.ratings li:not(:first-child)::before{ /*adds '|' in between the 3 tag flexboxes*/
+	content:"|";
+} 
+
+.ratings-stars{ 
+	display:inline-flex; /*makes the stars into their own flexboxes*/
+	align-items:center; /*aligns them to the center (downwards)*/
+}
+
+.ratings-votes{
+	background-color:#FF4500;
+	padding:10px;
+	font-size:12px;
+	display:flex;
+	align-items:center;
+	flex-direction:column;
+}
+
+.ratings-item .ratings-icon:first-of-type{ /*targets the space in between the first and second flexbox*/
+	margin:5px;
+}
+
+/*---------------------------------------RECOMMENDATIONS-----------------------------------------------*/
+
+.recommendations{
+	background-color:#F5F5F5;
+	display:flex;
+	flex-direction:column;
+}
+
+.recommendations-title-area{
+	text-align:center;
+	padding:80px;
+}
+
+.recommendations-title{
+	letter-spacing:7px;
+	font-size:30px;
+}
+
+.recommended-dishes{
+	display:flex;
+	background-color:#F5F5F5;
+	justify-content:center;
+	gap:20px;
+	padding:0px 10px 80px 10px;
+}
+
+/*dish one*/
+
+.dish-one{
+	background-color:white;
+	max-width:290px;
+	max-height:600px;
+}
+
+.dish-one-image{
+	max-width:290px;
+}
+
+.dish-one-name{
+	text-align:center;
+	margin-top:15px;
+}
+
+.ratings-stars-one{
+	text-align:center;
+}
+
+.ratings-icon-one{
+	max-width: 12px;
+}
+
+.dish-one-description{
+	padding:18px;
+}
+
+.rater-details-one{
+	display:flex;
+	padding:20px;
+}
+
+.rater-one{
+	display:flex;
+}
+
+.rater-one-pfp{
+	max-width:50px;
+}
+
+.rater-name{
+	margin-top:16px;
+	margin-left:10px;
+	font-size:11px;
+}
+
+.user-rating{
+	background-color:#6B8E23;
+	margin-left:auto;
+	text-align:center;
+	color:white;
+	border-radius:5px;
+}
+
+.user-rating-score{
+	margin-top:3px;
+}
+
+.user-rating-display{
+	font-size:10px;
+	width:80px;
+	padding:0px 5px;
+	margin-top:3px;
+}
+
+/*dish two*/
+
+.dish-two{
+	background-color:white;
+	max-width:290px;
+	max-height:600px;
+}
+
+.dish-two-image{
+	max-width:290px;
+}
+
+.dish-two-name{
+	text-align:center;
+	margin-top:15px;
+}
+
+.ratings-stars-two{
+	text-align:center;
+}
+
+.dish-two-description{
+	padding:18px;
+}
+
+.rater-details-two{
+	display:flex;
+	padding:20px;
+}
+
+.rater-two{
+	display:flex;
+}
+
+.rater-two-pfp{
+	max-width:50px;
+
+}
+
+
+/*dish three*/
+
+
+.dish-three{
+	background-color:white;
+	max-width:290px;
+	max-height:600px;
+}
+
+.dish-three-image{
+	max-width:290px;
+}
+
+.dish-three-name{
+	text-align:center;
+	margin-top:15px;
+}
+
+.ratings-stars-three{
+	text-align:center;
+}
+
+.dish-three-description{
+	padding:18px;
+}
+
+.rater-details-three{
+	display:flex;
+	padding:20px;
+}
+
+.rater-three{
+	display:flex;
+}
+
+.rater-three-pfp{
+	max-width:50px;
+}
+
+/*---------------------------------------FOOTER-----------------------------------------------*/
+
+.footer{
+	background-color:#555;
+	display:flex;
+	padding:30px 250px;
+}
+
+.logo-section{
+	display:flex;
+	flex-direction:column;
+}
+
+.footer-logo{
+	max-width:90px;
+	margin-left:8px;
+}
+
+.footer-name{
+	color:white;
+	opacity:60%;
+	margin-top:10px;
+}
+
+.footer-icons{
+	display:flex;
+	flex-direction:column;
+	margin-left:60px;
+}
+
+.location-pin{
+	filter:invert(1);
+	max-width:15px;
+}
+
+.phone{
+	filter:invert(1);
+	max-width:15px;
+	margin-top:30px;
+}
+
+.paper-plane{
+	filter:invert(1);
+	max-width:15px;
+	margin-top:15px;
+}
+
+.laptop{
+	filter:invert(1);
+	max-width:15px;
+	margin-top:15px;
+}
+
+.contact-info{
+	margin-left:20px;
+	list-style:none;
+	color:white;
+	opacity:70%;
+	font-size:11px;
+	display:flex;
+	flex-direction:column;
+	justify-content:space-between;
+}
+
+.social-media{
+	display:inline-flex;
+	margin-left:auto;
+}
+
+.facebook{
+	filter:invert(55%);
+	max-width:35px;
+	margin-right:30px;
+	margin-top:80px;
+
+}
+
+.instagram{
+	filter:invert(55%);
+	max-width:35px;
+	margin-right:30px;
+	margin-top:80px;
+}
+
+.twitter{
+	filter:invert(55%);
+	max-width:35px;
+	margin-right:40px;
+	margin-top:80px;
+}
+
+.footer-bottom{
+	background-color:#333;
+	padding-top:10px;
+	padding-bottom:5px;
+	display:flex;
+}
+
+.copyright{
+	color:white;
+	opacity:50%;
+	margin-left:250px;
+}
+
+.web-developer{
+	color:white;
+	opacity:50%;
+	margin-left:475px;
+}
+
+
